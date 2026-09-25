@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Health Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">WEARABLE HEALTH & SAFETY</p>
+      <h1>AI Health Companion</h1>
+      <p class="subtitle">Live prototype dashboard for the ESP32 smart watch</p>
+    </div>
+    <span id="connectionBadge" class="badge online">● Demo Online</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2 id="overallStatus">System Normal</h2>
+        <p id="statusText">Continuous monitoring is active.</p>
+      </div>
+      <div class="watch-icon">⌚</div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <span class="icon">❤️</span>
+        <p>Heart Rate</p>
+        <strong><span id="heartRate">78</span> BPM</strong>
+        <small id="heartStatus">Normal range</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">🛡️</span>
+        <p>Fall Detection</p>
+        <strong id="fallStatus">SAFE</strong>
+        <small>Motion monitoring active</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">📍</span>
+        <p>GPS</p>
+        <strong>ACTIVE</strong>
+        <small id="gpsText">Location ready</small>
+      </article>
+
+      <article class="card">
+        <span class="icon">🚨</span>
+        <p>Emergency</p>
+        <strong id="emergencyStatus">INACTIVE</strong>
+        <small>Guardian alert system</small>
+      </article>
+    </section>
+
+    <section id="alertBox" class="alert hidden">
+      <div>
+        <h2 id="alertTitle">Are you okay?</h2>
+        <p id="alertMessage">A possible fall was detected. Press the button to confirm.</p>
+      </div>
+      <button id="okButton">I'M OK</button>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Live Monitoring</h2>
+          <p>Use demo controls to present the complete emergency flow.</p>
+        </div>
+        <span class="live-dot">LIVE</span>
+      </div>
+
+      <div class="controls">
+        <button id="normalBtn">Normal</button>
+        <button id="fallBtn">Simulate Fall</button>
+        <button id="emergencyBtn">Simulate Emergency</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="timeline">
+        <div class="event">
+          <span>●</span>
+          <div><strong>Monitoring started</strong><small>Heart rate and motion sensors active</small></div>
+        </div>
+        <div class="event" id="fallEvent">
+          <span>●</span>
+          <div><strong>Fall detection</strong><small>Waiting for event</small></div>
+        </div>
+        <div class="event" id="guardianEvent">
+          <span>●</span>
+          <div><strong>Guardian communication</strong><small>Waiting for emergency</small></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Hackathon prototype • Not a medical device • Sensor readings shown for demonstration
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
